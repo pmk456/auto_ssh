@@ -27,6 +27,8 @@ if '.ip.txt' not in os.listdir():
     f.write(n)
     print('[*] Ip And Username Has Been Saved To Ip.txt')
     f.close()
+else:
+    print('[*] Ip File Detected!')
 po = open('.ip.txt', 'r')
 po1 = po.readlines()
 ssh_ip = po1[0]
@@ -57,6 +59,9 @@ if 'ssh' not in os.listdir():
     a_file.close()
     sleep(1.5)
     print('[*] Generated Bash Script!')
+else:
+    print('[*] Bash Script Exists')
+    print('[*] Delete Everything In Directory Except Setup.py and compile.sh If You want to reset')
 print('[*] Now We Have Some Important Stuff To Do')
 print('[*] Let\'s Create An SSH Pair For Password Less Connection To Your Remote Computer')
 print('[*] Just Put It Default In Location And Just Press Enter')
