@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import os
 from time import sleep
 RED = "\033[1;31m"
