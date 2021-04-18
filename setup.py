@@ -39,9 +39,9 @@ if 'ssh' not in os.listdir():
     lines = f"""
     #!/bin/bash
     IP={ssh_ip}
-    echo "\[*] Connecting To {ssh_un}..."
+    echo "[*] Connecting To {ssh_un}..."
     sleep 0.5
-    echo "\[*] Generated With Auto_SSH"
+    echo "[*] Generated With Auto_SSH"
     if ping -q -c 1 -W 1 $IP >/dev/null; then
     echo "[*] Connected To {ssh_un}"
     sleep 1
