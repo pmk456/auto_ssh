@@ -37,8 +37,7 @@ ssh_un = po1[1]
 ssh_ip1 = ssh_ip
 if 'ssh' not in os.listdir():
     print('[*] Generating Bash Script...')
-    lines = f"""
-    #!/bin/bash
+    lines = f"""#!/bin/bash
     IP={ssh_ip}
     echo "[*] Connecting To {ssh_un}..."
     sleep 0.5
