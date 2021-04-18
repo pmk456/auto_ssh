@@ -22,7 +22,7 @@
          chmod +x compile.sh
 
 
-    4?- Run Evil-Droid Framework :
+    4?- Run Auto SSH :
          python3 setup.py
          Follow On Screen Instructions	   
       
