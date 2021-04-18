@@ -1,6 +1,6 @@
 # Auto SSH
 
-## Evil-Droid Framework . version 0.1
+## Auto SSH . version 0.1
     Author: Patan Musthakheem
 
 ## Description:
