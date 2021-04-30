@@ -15,11 +15,13 @@ if [ "" = "$PKG_OK" ]; then
   echo "[*] Installing $REQUIRED_PKG "
   apt-get --yes install $REQUIRED_PKG
 fi
-shc -f ssh
+shc -H -f ssh
 echo "[*] Compiled Successfully"
 mv ssh.x /bin/$name
 echo "[*] Moved To Bin Directory"
 echo "[*] Creating Environment Variable"
 export $name=/bin/"$name"
+echo "[*] Binary Will Only Work In Bash Shells"
+echo "[*] Binary Will Not Work In ZSH or FISH Shells"
 echo "[*] Done!"
 echo "[*] Created By Pmk"
