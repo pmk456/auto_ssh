@@ -41,7 +41,7 @@ if 'ssh' not in os.listdir():
     IP={ssh_ip}
     echo "[*] Connecting To {ssh_un}..."
     sleep 0.5
-    echo "[*] Generated With Auto_SSH"
+    echo "[*] Created By Pmk "
     if ping -q -c 1 -W 1 $IP >/dev/null; then
     echo "[*] Connected To {ssh_un}"
     sleep 1
