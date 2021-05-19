@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import os
 from time import sleep
+from sys import exit
 RED = "\033[1;31m"
 GREEN = "\033[0;32m"
 if 'SUDO_UID' not in os.environ.keys():
