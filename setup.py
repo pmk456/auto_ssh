@@ -2,11 +2,9 @@
 import os
 from time import sleep
 from sys import exit
+
 RED = "\033[1;31m"
 GREEN = "\033[0;32m"
-if 'SUDO_UID' not in os.environ.keys():
-    print(RED, 'Run it As Root!')
-    exit(0)
 os.system('clear')
 print(GREEN, """
  ____            _    
@@ -23,12 +21,12 @@ if '.ip.txt' not in os.listdir():
     print('[*] Ip File Not Detected!')
     i = input('[*] Enter Ip: ')
     n = input('[*] Enter UserName: ')
-    f = open('.ip.txt', 'a')
-    f.write(i)
-    f.write('\n')
-    f.write(n)
-    print('[*] Ip And Username Has Been Saved To Ip.txt')
-    f.close()
+    with open('.ip.txt', 'a') as f:
+        f.write(i)
+        f.write('\n')
+        f.write(n)
+        print('[*] Ip And Username Has Been Saved To Ip.txt')
+        f.close()
 else:
     print('[*] Ip File Detected!')
 po = open('.ip.txt', 'r')
@@ -36,7 +34,10 @@ po1 = po.readlines()
 ssh_ip = po1[0]
 ssh_un = po1[1]
 ssh_ip1 = ssh_ip
-if 'ssh' not in os.listdir():
+if 'ssh' in os.listdir():
+    print('[*] Bash Script Exists')
+    print('[*] Delete Everything In Directory Except Setup.py and compile.sh If You want to reset')
+else:
     print('[*] Generating Bash Script...')
     lines = f"""#!/bin/bash
     IP={ssh_ip}
@@ -60,38 +61,28 @@ if 'ssh' not in os.listdir():
     a_file.close()
     sleep(1.5)
     print('[*] Generated Bash Script!')
-else:
-    print('[*] Bash Script Exists')
-    print('[*] Delete Everything In Directory Except Setup.py and compile.sh If You want to reset')
-print('[*] Now We Have Some Important Stuff To Do')
-print('[*] Let\'s Create An SSH Pair For Password Less Connection To Your Remote Computer')
-print('[*] Just Put It Default In Location And Just Press Enter')
-print('[*] For Password You Can Use anything')
-print('[*] Creating RSA Keypair')
+    os.system("clear")
+print('[*] Creating RSA Keypair For Password Less connection')
 os.system('ssh-keygen -t rsa -b 4096')
 print('[*] Copying Public Key ')
 print('[*] It Will Ask You Password Of Remote Computer Enter It!')
 os.system(f'ssh-copy-id {ssh_un}@{ssh_ip}')
-print('[*] DONE!')
-print('[*] You can Change Username And ip Address In ip.txt or Delete it and Re Run The Script')
-print('[*] EXITING...')
-# Power Of Python
-print('[*] Testing Script...')
-print('[*] If It Login Without Asking Password Then Everything Is Working Correctly!')
-i = input('[*] Compile And Move It To /bin [Y/N]: ')
-if i == 'y' or i == 'yes':
-    print(GREEN, '[*] Starting Compile Script')
-    #Pmk
-    os.system("sh compile.sh")
+i = input('[*]Move It To /bin For Accessing It anywhere [Y/N]: ')
+if i == 'y' or i == 'yes' or i == "Y":
+    print(RED, "[*] This Needs Sudo Permission")
+    name = input("[*] Enter Name For Accessing It Anywhere From Terminal: ")
+    os.system(f"sudo mv ssh /bin/{name}")
 else:
     os.system('clear')
-    print("""
-                              ____            _    
-                             |  _ \ _ __ ___ | | __
-                             | |_) | '_ ` _ \| |/ /
-                             |  __/| | | | | |   < 
-                             |_|   |_| |_| |_|_|\_\  """)
+    print(GREEN, """
+     ____            _    
+    |  _ \ _ __ ___ | | __
+    | |_) | '_ ` _ \| |/ /
+    |  __/| | | | | |   < 
+    |_|   |_| |_| |_|_|\_\ """)
+    print(GREEN, "\n****************************************************************")
+    print(GREEN, "\n* Copyright of Patan Musthakheem, 2021                         *")
+    print(GREEN, "\n* www.github.com/pmk456                                        *")
+    print(GREEN, "\n* www.youtube.com/hackerx                                      *")
+    print(GREEN, "\n****************************************************************")
     exit(12)
-                                                   
-
-
