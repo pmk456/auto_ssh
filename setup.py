@@ -19,7 +19,7 @@ def banner():
     print( GREEN, "\n* www.github.com/pmk456                                        *" )
     print( GREEN, "\n* www.youtube.com/hackerx                                      *" )
     print( GREEN, "\n****************************************************************" )
-    exit( 12 )
+   
 
 
 if os.path.exists( "/data/data/com.termux/" ):
