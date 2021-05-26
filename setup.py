@@ -46,7 +46,7 @@ elif system == "termux":
         print( RED + "[-] SSH IS NOT INSTALLED IN YOU SYSTEM" )
         per = input( GREEN + "[+] Install SSH [Y/N]: " )
         if per == 'y' or per == 'Y' or per == "yes" or per == "Yes":
-            os.system( "sudo apt install openssh-client --yes" )
+            os.system( "pkg install openssh" )
         else:
             banner()
             exit(12)
