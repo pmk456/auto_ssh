@@ -2,11 +2,12 @@ import ctypes, os, pickle, sys
 import subprocess as sp
 system = None
 
-
-admin = ctypes.windll.shell32.IsUserAnAdmin() == 1
+    
+    
 
 if sys.platform == 'win32':
     system = 'Windows'
+    admin = ctypes.windll.shell32.IsUserAnAdmin() == 1
 elif sys.platform == 'linux':
     system = 'Linux'
 if os.path.exists("/data/data/com.termux/"):
