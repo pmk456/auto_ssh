@@ -1,6 +1,6 @@
 # Auto SSH
 
-## Auto SSH . version 2.0
+## Auto SSH Version 2.0
     Author: Patan Musthakheem
 
 ## Description:
