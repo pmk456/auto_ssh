@@ -1,6 +1,6 @@
 import os, sys
 
-if not "ssh.bat" and ".ip.dat" and "ssh" not in os.listdir():
+if "ssh.bat" not in os.listdir() and ".ip.dat" not in os.listdir() and "ssh" not in os.listdir():
     print("[*] No Files Detected, So Nothing Deleted!")
     print("[*] Created By Pmk")
     sys.exit(1)
@@ -12,6 +12,6 @@ if ".ip.dat" in os.listdir():
     print("[+] Removed Ip File")
 if "ssh" in os.listdir():
     os.remove("ssh")
-    print("Remove SSH File")
+    print("[+] Removed SSH File")
 print("[*] Reset Success")
 print("[*] Created By Pmk")
