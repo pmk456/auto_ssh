@@ -15,11 +15,11 @@
     1 - Python3
 
 ## Download/Config/Usage:
-    1? - Download the tool from github
+    1 - Download the tool from github
     https://github.com/pmk456/auto_ssh    
 
     
-    2?- Run Auto SSH :
+    2- Run Auto SSH :
          python3 setup.py
          Follow On Screen Instructions	   
       
