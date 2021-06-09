@@ -4,7 +4,7 @@
     Author: Patan Musthakheem
 
 ## Description:
-    Auto SSH is a tool Which Is Useful For Who Wanted To Connect Ssh In A Blink Just Type Name Which You Set As Environment Varibale For EX: if you type pi
+    Auto SSH is a tool Which Is Useful For Who Wanted To Connect SSH In A Blink Just Type Name Which You Set As Environment Varibale For EX: if you type pi
     it will connect to That Remote Computer you specified When you run the script   
 <br /><br />
 ## Supported Platforms
