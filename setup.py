@@ -8,6 +8,7 @@ system = None
 if sys.platform == 'win32':
     system = 'Windows'
     admin = ctypes.windll.shell32.IsUserAnAdmin() == 1
+    os.system('color a')
 elif sys.platform == 'linux':
     system = 'Linux'
 if os.path.exists("/data/data/com.termux/"):
@@ -70,6 +71,10 @@ if system == 'Termux' or system == "Linux":
     if 'ssh' in os.listdir():
         print("[+] Bash Script Exists")
     else:
+        with open(".ip.dat", 'rb') as file:
+            ip_un = pickle.load(file)
+            ssh_ip = ip_un[0]
+            ssh_un = ip_un[1]
         print('[*] Generating Bash Script...')
         lines = f"""#!/bin/bash
         IP={ssh_ip}
@@ -184,6 +189,7 @@ else:
 if system == "Windows":
     i = input('[+] Move The Script To C:\Windows\System32 For Accessing It anywhere [Y/N]: ')
     if i == 'y' or i == 'yes' or i == "Y":
+        os.system('color 4')
         print("[+] THIS NEEDS ADMINISTRATOR PERMISSION")
         name = input("[+] Enter Name For Accessing It Anywhere From cmd (or) Powershell: ")
         if admin:
